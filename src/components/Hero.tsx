@@ -114,7 +114,7 @@ export function Hero() {
       {/* Tagline Reveal Section */}
       <section className="relative h-screen w-full flex items-center justify-center bg-black">
         <div className="text-center px-8">
-          <h1 className="tracking-tight" style={{ fontSize: '3.375rem' }}>
+          <h1 className="tracking-tight" style={{ fontSize: '3.04rem' }}>
             Deterministic, first-principles electrocardiography.
           </h1>
         </div>
