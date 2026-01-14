@@ -34,7 +34,7 @@ export function TechnologyShowcase() {
               <div className="text-sm text-gray-400 mb-3">Life-Threatening Arrhythmia Detection:</div>
               <div className="flex gap-12 text-lg text-emerald-400">
                 <span>✓ 97.1% VT/VF</span>
-                <span>✓ 94.9% STEMI <span style={{ fontSize: '0.625em' }}>(n=665, Sens 98.2%, Spec 83.8%)</span></span>
+                <span>✓ 94.9% STEMI <span style={{ fontSize: '0.625em' }}>(n=665, Sens 98.2%, Spec 93.8%)</span></span>
               </div>
             </div>
           </div>
