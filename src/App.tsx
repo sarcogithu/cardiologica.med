@@ -9,7 +9,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="bg-black text-white">
+    <div className="min-h-screen w-full bg-black text-white overflow-x-hidden">
       <Hero />
       <OverviewSection />
       <FeatureGrid />
