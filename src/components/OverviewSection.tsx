@@ -1,12 +1,33 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function OverviewSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoOpacity, setVideoOpacity] = useState(0);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5;
-    }
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.playbackRate = 0.25;
+
+    const handleTimeUpdate = () => {
+      const duration = video.duration;
+      const currentTime = video.currentTime;
+      const fadeTime = 1.5; // seconds to fade in/out
+
+      if (currentTime < fadeTime) {
+        // Fade in
+        setVideoOpacity(currentTime / fadeTime);
+      } else if (currentTime > duration - fadeTime) {
+        // Fade out
+        setVideoOpacity((duration - currentTime) / fadeTime);
+      } else {
+        setVideoOpacity(1);
+      }
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
   }, []);
 
   return (
@@ -45,8 +66,8 @@ export function OverviewSection() {
               loop
               muted
               playsInline
-              className="w-full h-auto rounded-lg"
-              style={{ opacity: 0.9 }}
+              className="w-full h-auto rounded-lg transition-opacity duration-300"
+              style={{ opacity: videoOpacity * 0.9 }}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
             </video>
