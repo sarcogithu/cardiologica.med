@@ -46,7 +46,7 @@ export function OverviewSection() {
               muted
               playsInline
               className="w-full h-auto rounded-lg"
-              style={{ opacity: 0.8 }}
+              style={{ opacity: 0.9 }}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
             </video>
