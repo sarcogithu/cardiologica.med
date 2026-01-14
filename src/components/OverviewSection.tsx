@@ -45,10 +45,18 @@ export function OverviewSection() {
               loop
               muted
               playsInline
-              className="w-full h-auto rounded-lg opacity-70"
+              className="w-full h-auto rounded-lg"
+              style={{ opacity: 0.8 }}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
             </video>
+            {/* Vignette overlay */}
+            <div
+              className="absolute inset-0 rounded-lg pointer-events-none"
+              style={{
+                background: 'radial-gradient(ellipse 50% 50% at center, transparent 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,1) 100%)'
+              }}
+            />
           </div>
         </div>
       </div>
