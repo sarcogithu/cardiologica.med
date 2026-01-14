@@ -1263,6 +1263,12 @@
 
 html {
   font-size: var(--font-size);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 @property --tw-translate-x {
