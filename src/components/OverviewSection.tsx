@@ -8,7 +8,7 @@ export function OverviewSection() {
     const video = videoRef.current;
     if (!video) return;
 
-    video.playbackRate = 0.25;
+    video.playbackRate = 0.4;
 
     const handleTimeUpdate = () => {
       const duration = video.duration;
