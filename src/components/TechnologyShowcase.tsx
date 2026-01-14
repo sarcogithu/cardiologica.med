@@ -2,15 +2,15 @@ export function TechnologyShowcase() {
   return (
     <section className="relative py-32 px-8 bg-black">
       <div className="relative max-w-7xl mx-auto">
-        {/* First Block - Validated by Science */}
+        {/* First Block - Honest */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
           <div>
             <div className="text-sm tracking-widest text-gray-400 mb-4">VALIDATION</div>
             <h2 className="text-5xl mb-8">
-              Validated by Science
+              Honest
             </h2>
             <p className="text-xl text-gray-300 mb-6">
-              Benchmarked against gold-standard PhysioNet databases with cardiologist-verified ground truth.
+              Benchmarked against gold-standard PhysioNet databases with cardiologist-verified ground truth. Honest about what we know, and what we don't.
             </p>
             <div className="grid grid-cols-2 gap-8 mt-8">
               <div>
