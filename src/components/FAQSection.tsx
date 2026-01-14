@@ -69,7 +69,7 @@ export function FAQSection() {
 
         <div className="mt-16 text-center">
           <p className="text-gray-400 mb-6">Need additional support?</p>
-          <a href="mailto:TC@sarc-usa.com?subject=Cardiologica%20Inquiry" className="inline-block px-8 py-3 border border-white hover:bg-white hover:text-black transition-all">
+          <a href="mailto:devteam@cardiologica.med?subject=Cardiologica%20Inquiry" className="inline-block px-8 py-3 border border-white hover:bg-white hover:text-black transition-all">
             Contact Research Team
           </a>
         </div>

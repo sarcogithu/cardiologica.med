@@ -69,7 +69,7 @@ export function TechnologyShowcase() {
               <p className="text-sm text-gray-400 mb-4">
                 We're actively seeking validation partnerships with institutions, device manufacturers, and researchers. If you have labeled ECG data, we'll run Cardiologica against it—and share the results.
               </p>
-              <a href="mailto:TC@sarc-usa.com?subject=Dataset%20Validation%20Request" className="inline-block px-8 py-2 text-sm rounded transition-all text-white hover:opacity-90" style={{ background: 'linear-gradient(135deg, #86754f 0%, #5c5035 100%)' }}>
+              <a href="mailto:devteam@cardiologica.med?subject=Dataset%20Validation%20Request" className="inline-block px-8 py-2 text-sm rounded transition-all text-white hover:opacity-90" style={{ background: 'linear-gradient(135deg, #86754f 0%, #5c5035 100%)' }}>
                 Send us a Dataset
               </a>
             </div>
