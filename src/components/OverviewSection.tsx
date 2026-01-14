@@ -1,4 +1,13 @@
+import { useEffect, useRef } from 'react';
+
 export function OverviewSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
   return (
     <section className="relative pt-16 px-8 bg-black" style={{ paddingBottom: '600px' }}>
@@ -13,17 +22,34 @@ export function OverviewSection() {
 
 
       <div className="relative max-w-7xl mx-auto px-8">
-        <div style={{ maxWidth: '600px' }}>
-          <div className="text-sm tracking-widest text-gray-400 mb-4">OVERVIEW</div>
-          <h2 className="text-5xl mb-8">
-            Mechanistic. Deterministic.
-          </h2>
-          <p className="text-xl text-gray-300 mb-4">
-            Most ECG software gives you an answer. Cardiologica shows you why. Every classification follows a transparent decision path, from signal to diagnosis, so you can verify, document, and defend your clinical judgment. No black boxes. No probability scores.
-          </p>
-          <p className="text-xl text-gray-300">
-            No neural networks, just pure electrophysiologic reasoning derived from clinical cardiology principles.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Text */}
+          <div style={{ maxWidth: '600px' }}>
+            <div className="text-sm tracking-widest text-gray-400 mb-4">OVERVIEW</div>
+            <h2 className="text-5xl mb-8">
+              Mechanistic. Deterministic.
+            </h2>
+            <p className="text-xl text-gray-300 mb-4">
+              Most ECG software gives you an answer. Cardiologica shows you why. Every classification follows a transparent decision path, from signal to diagnosis, so you can verify, document, and defend your clinical judgment. No black boxes. No probability scores.
+            </p>
+            <p className="text-xl text-gray-300">
+              No neural networks, just pure electrophysiologic reasoning derived from clinical cardiology principles.
+            </p>
+          </div>
+
+          {/* Right side - Video */}
+          <div className="relative">
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto rounded-lg opacity-70"
+            >
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
 
