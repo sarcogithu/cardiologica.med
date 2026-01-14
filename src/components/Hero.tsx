@@ -40,6 +40,7 @@ export function Hero() {
         <div className="flex items-center">
           <div className="text-xl tracking-tight"><span style={{ fontWeight: 700 }}>CARDIO</span><span style={{ fontWeight: 300 }}>LOGIC∆</span></div>
         </div>
+{/* Nav links hidden until active
         <div className="flex items-center gap-8">
           <button className="hover:text-gray-300 transition-colors">Overview</button>
           <button className="hover:text-gray-300 transition-colors">Technology</button>
@@ -49,6 +50,7 @@ export function Hero() {
             Access Platform
           </button>
         </div>
+*/}
       </nav>
 
       {/* Initial Hero - Just Logo */}
