@@ -146,9 +146,27 @@ export function CordisPage() {
             >
               Learn by Building
             </h2>
-            <p className="text-xl text-gray-300 mb-4">
+            <p className="text-xl text-gray-300 mb-12">
               CORDIS-DX lets you construct ECGs from the ground up. Select a rhythm, layer on conduction changes, add diagnostic patterns, and watch the waveform respond in real time across all 12 leads. One simulator, every environment, every layer of cardiac pathology.
             </p>
+          </div>
+
+          {/* Screenshot - full width */}
+          <div className="w-full rounded-lg overflow-hidden border border-zinc-800 mb-8">
+            <img
+              src="/cordis-screenshot.png"
+              alt="CORDIS-DX Interface — Sinus Bradycardia with Hyperkalemia Syndrome"
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="text-center">
+            <a
+              href="mailto:devteam@cardiologica.med?subject=CORDIS-DX%20Access"
+              className="inline-block px-8 py-2 text-sm rounded transition-all text-white hover:opacity-90"
+              style={{ background: 'linear-gradient(135deg, #A97CF8 0%, #4AE8A0 100%)' }}
+            >
+              Try CORDIS-DX
+            </a>
           </div>
         </div>
       </section>
@@ -241,21 +259,24 @@ export function CordisPage() {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              {/* CORDIS-DX Screenshot */}
-              <div className="w-full rounded-lg overflow-hidden border border-zinc-800 mb-8">
-                <img
-                  src="/cordis-screenshot.png"
-                  alt="CORDIS-DX Interface — Sinus Bradycardia with Hyperkalemia Syndrome"
-                  className="w-full h-auto"
-                />
+              <div className="grid grid-cols-2 gap-8 text-center">
+                <div>
+                  <div className="text-4xl mb-2" style={{ color: '#6CC8D0' }}>35</div>
+                  <div className="text-gray-400">Rhythm Identities</div>
+                </div>
+                <div>
+                  <div className="text-4xl mb-2" style={{ color: '#A97CF8' }}>50+</div>
+                  <div className="text-gray-400">Conduction Features</div>
+                </div>
+                <div>
+                  <div className="text-4xl mb-2" style={{ color: '#4AE8A0' }}>48</div>
+                  <div className="text-gray-400">Diagnostic Patterns</div>
+                </div>
+                <div>
+                  <div className="text-4xl mb-2" style={{ color: '#6CC8D0' }}>12</div>
+                  <div className="text-gray-400">Lead Display</div>
+                </div>
               </div>
-              <a
-                href="mailto:devteam@cardiologica.med?subject=CORDIS-DX%20Access"
-                className="inline-block px-8 py-2 text-sm rounded transition-all text-white hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #A97CF8 0%, #4AE8A0 100%)' }}
-              >
-                Try CORDIS-DX
-              </a>
             </div>
           </div>
         </div>
