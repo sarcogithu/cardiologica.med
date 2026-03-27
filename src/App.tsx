@@ -1,23 +1,28 @@
-import { Hero } from './components/Hero';
-import { OverviewSection } from './components/OverviewSection';
-import { FeatureGrid } from './components/FeatureGrid';
-import { TechnologyShowcase } from './components/TechnologyShowcase';
-import { EngineSection } from './components/EngineSection';
-import { ScreenshotSection } from './components/ScreenshotSection';
-import { FAQSection } from './components/FAQSection';
-import { Footer } from './components/Footer';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { HomePage } from './pages/HomePage';
+import { DXPage } from './pages/DXPage';
+import { AIPage } from './pages/AIPage';
+import { CordisPage } from './pages/CordisPage';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full bg-black text-white overflow-x-hidden">
-      <Hero />
-      <OverviewSection />
-      <FeatureGrid />
-      <TechnologyShowcase />
-      <EngineSection />
-      <ScreenshotSection />
-      <FAQSection />
-      <Footer />
-    </div>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cardiologica-dx" element={<DXPage />} />
+        <Route path="/cardiologica-ai" element={<AIPage />} />
+        <Route path="/cordis-dx" element={<CordisPage />} />
+      </Routes>
+    </>
   );
 }

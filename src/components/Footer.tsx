@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from 'figma:asset/1e6c52ff2697aaf9588fe0f4bb5bc6992fca671a.png';
 
 export function Footer() {
@@ -7,21 +8,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 items-start">
           {/* Brand - Logo */}
           <div className="md:col-span-1">
-            <img
-              src={logo}
-              alt="Cardiologica"
-              style={{ height: '150px', width: 'auto', marginTop: '-40px', marginLeft: '-8px' }}
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Cardiologica"
+                style={{ height: '150px', width: 'auto', marginTop: '-40px', marginLeft: '-8px' }}
+              />
+            </Link>
           </div>
 
-          {/* Features */}
+          {/* Products */}
           <div>
-            <h3 className="mb-4 tracking-wide">Features</h3>
+            <h3 className="mb-4 tracking-wide">Products</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">ROCI Taxonomy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Signal Processing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Multi-Lead Support</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">EHR Integration</a></li>
+              <li><Link to="/cardiologica-dx" className="hover:text-white transition-colors">Cardiologica-DX</Link></li>
+              <li><Link to="/cardiologica-ai" className="hover:text-white transition-colors">Cardiologica-AI</Link></li>
+              <li><Link to="/cordis-dx" className="hover:text-white transition-colors">CORDIS-DX</Link></li>
             </ul>
           </div>
 
@@ -43,7 +45,7 @@ export function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">About</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Team</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:devteam@cardiologica.med?subject=Cardiologica%20Inquiry" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -73,14 +75,14 @@ export function Footer() {
         {/* SARC Section */}
         <div className="py-8 border-t border-zinc-900 mb-8">
           <div className="text-white text-lg mb-2">SARC, LLC.</div>
-          <div className="text-gray-500 text-sm mb-1">SDVOSB Certified • VOSB Certified</div>
+          <div className="text-gray-500 text-sm mb-1">SDVOSB Certified &bull; VOSB Certified</div>
           <div className="text-gray-600 text-xs">Service-Disabled Veteran-Owned Small Business</div>
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 border-t border-zinc-900 pt-8">
           <p>
-            © 2026 Cardiologica. All rights reserved.
+            &copy; 2026 Cardiologica. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>

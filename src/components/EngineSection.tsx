@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
-export function EngineSection() {
+interface EngineSectionProps {
+  onExploreTaxonomy?: () => void;
+}
+
+export function EngineSection({ onExploreTaxonomy }: EngineSectionProps) {
   const [glowPosition, setGlowPosition] = useState({ x: 70, y: 30 });
 
   useEffect(() => {
@@ -91,7 +95,10 @@ export function EngineSection() {
         </div>
 
         <div className="mt-20">
-          <button className="px-12 py-4 border border-white hover:bg-white hover:text-black transition-all rounded-xl">
+          <button
+            onClick={onExploreTaxonomy}
+            className="px-12 py-4 border border-white hover:bg-white hover:text-black transition-all rounded-xl"
+          >
             Explore the Taxonomy
           </button>
         </div>
