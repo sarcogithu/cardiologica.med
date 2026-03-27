@@ -9,32 +9,32 @@ import { TreeStructure, Stack, Monitor, Exam, Sparkle, BookOpen } from '@phospho
 
 const features = [
   {
-    icon: <TreeStructure size={48} weight="light" color="#86754f" style={{ transform: 'rotate(90deg)' }} />,
+    icon: <TreeStructure size={48} weight="light" color="#6CC8D0" style={{ transform: 'rotate(90deg)' }} />,
     title: '35 Rhythm Identities',
     description: 'Every clinically relevant rhythm, from sinus to Torsades.'
   },
   {
-    icon: <Stack size={48} weight="light" color="#86754f" />,
+    icon: <Stack size={48} weight="light" color="#A97CF8" />,
     title: 'Three Ontology Layers',
     description: 'Rhythm + Conduction + Conditions stack independently and correctly.'
   },
   {
-    icon: <Monitor size={48} weight="light" color="#86754f" />,
+    icon: <Monitor size={48} weight="light" color="#4AE8A0" />,
     title: 'Paper + Monitor Display',
     description: "See ECGs the way you'll see them in the field, the ED, or the ICU."
   },
   {
-    icon: <Exam size={48} weight="light" color="#86754f" />,
+    icon: <Exam size={48} weight="light" color="#6CC8D0" />,
     title: 'QBank Test Mode',
     description: '25+ questions spanning basic through expert. Paramedic to physician.'
   },
   {
-    icon: <Sparkle size={48} weight="light" color="#86754f" />,
+    icon: <Sparkle size={48} weight="light" color="#A97CF8" />,
     title: 'Aurora Highlight Engine',
     description: 'Critical findings glow on the waveform so students know exactly where to look.'
   },
   {
-    icon: <BookOpen size={48} weight="light" color="#86754f" />,
+    icon: <BookOpen size={48} weight="light" color="#4AE8A0" />,
     title: 'OpenEvidence Integration',
     description: 'Evidence-based clinical flashcards with citations for every condition.'
   }
@@ -171,8 +171,8 @@ export function CordisPage() {
           style={{ filter: 'blur(80px)' }}
           animate={{
             background: `radial-gradient(ellipse 50% 50% at ${glowPosition.x}% ${glowPosition.y}%,
-              rgba(134, 117, 77, 0.12) 0%,
-              rgba(134, 117, 77, 0.06) 40%,
+              rgba(106, 200, 208, 0.12) 0%,
+              rgba(169, 124, 248, 0.06) 40%,
               transparent 70%)`
           }}
           transition={{ duration: 12.5, ease: [0.25, 0.1, 0.25, 1] }}
@@ -241,17 +241,13 @@ export function CordisPage() {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              {/* Placeholder for CORDIS-DX screenshots */}
-              <div className="w-full aspect-video bg-zinc-900/50 border border-zinc-800 rounded-lg flex items-center justify-center mb-8">
-                <div className="text-center text-gray-500">
-                  <div className="text-4xl mb-4" style={{
-                    background: 'linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}>CORDIS-DX</div>
-                  <div className="text-sm">Interface Preview Coming Soon</div>
-                </div>
+              {/* CORDIS-DX Screenshot */}
+              <div className="w-full rounded-lg overflow-hidden border border-zinc-800 mb-8">
+                <img
+                  src="/cordis-screenshot.png"
+                  alt="CORDIS-DX Interface — Sinus Bradycardia with Hyperkalemia Syndrome"
+                  className="w-full h-auto"
+                />
               </div>
               <a
                 href="mailto:devteam@cardiologica.med?subject=CORDIS-DX%20Access"
