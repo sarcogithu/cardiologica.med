@@ -11,7 +11,7 @@ const features = [
   {
     icon: <TreeStructure size={48} weight="light" color="#6CC8D0" style={{ transform: 'rotate(90deg)' }} />,
     title: '35 Rhythm Identities',
-    description: 'Every clinically relevant rhythm, from sinus to Torsades.'
+    description: 'Every clinically relevant rhythm, from sinus to ventricular fibrillation.'
   },
   {
     icon: <Stack size={48} weight="light" color="#A97CF8" />,
