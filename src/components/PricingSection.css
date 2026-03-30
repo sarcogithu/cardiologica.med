@@ -1,0 +1,411 @@
+.pricing-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.pricing-header h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.pricing-header p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* TIERS */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 72px;
+}
+
+.tier {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.tier:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* FEATURED — AURORA BORDER */
+.tier.featured {
+  border: 2px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image:
+    linear-gradient(#000, #000),
+    linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0);
+  box-shadow:
+    0 0 24px rgba(169, 124, 248, 0.15),
+    0 0 48px rgba(74, 232, 160, 0.08);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0);
+  color: #000;
+  white-space: nowrap;
+}
+
+.tier-name {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 14px;
+}
+
+.tier-price {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.tier-price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tier-annual {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+  min-height: 18px;
+}
+
+.tier-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.tier-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 20px;
+}
+
+.tier.featured .tier-divider {
+  background: linear-gradient(90deg, rgba(169, 124, 248, 0.2), rgba(108, 200, 208, 0.2), rgba(74, 232, 160, 0.2));
+}
+
+.tier-features {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.tier-features li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.tier-features li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Non-featured tiers: gold checks */
+.tier:not(.featured) .tier-features li::before {
+  color: #86754F;
+}
+
+/* Featured tier: aurora checks */
+.tier.featured .tier-features li::before {
+  background: linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tier-features li.locked::before {
+  content: "\2014";
+  color: rgba(255, 255, 255, 0.15);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.15);
+  background: none;
+}
+
+.tier-features li.locked {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.tier-features li.section-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  padding-left: 0;
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.tier-features li.section-label::before {
+  content: none;
+}
+
+/* BILLING TOGGLE */
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* BUTTONS */
+.tier-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.tier-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-free {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-aurora {
+  background: linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0);
+  color: #000;
+  font-weight: 700;
+}
+
+.btn-contact {
+  background: transparent;
+  color: #86754F;
+  border: 1px solid rgba(134, 117, 79, 0.4);
+}
+
+/* INSTITUTIONAL */
+.inst-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 56px;
+}
+
+.inst-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.inst-header h3 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.inst-header p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+}
+
+.inst-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.inst-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px 22px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.inst-card .ic-name {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+}
+
+.inst-card .ic-price {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.inst-card .ic-price span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 400;
+}
+
+.inst-card .ic-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+.inst-features {
+  max-width: 700px;
+  margin: 0 auto 28px auto;
+}
+
+.inst-features h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.inst-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 24px;
+  padding: 0;
+}
+
+.inst-feat-grid li {
+  list-style: none;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 4px 0 4px 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.inst-feat-grid li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #86754F;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.note {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.note strong {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+
+.sdvosb {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: rgba(134, 117, 79, 0.5);
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-email:hover {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .tiers {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inst-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inst-feat-grid {
+    grid-template-columns: 1fr;
+  }
+}
