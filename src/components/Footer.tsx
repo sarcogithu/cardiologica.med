@@ -12,6 +12,7 @@ export function Footer() {
               <img
                 src={logo}
                 alt="Cardiologica"
+                className="hidden md:block"
                 style={{ height: '150px', width: 'auto', marginTop: '-40px', marginLeft: '-8px' }}
               />
             </Link>

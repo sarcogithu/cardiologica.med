@@ -31,7 +31,7 @@ export function OverviewSection() {
   }, []);
 
   return (
-    <section className="relative pt-16 px-8 bg-black" style={{ paddingBottom: '600px' }}>
+    <section className="relative pt-16 px-8 bg-black" style={{ paddingBottom: '120px' }}>
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

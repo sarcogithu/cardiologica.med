@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/cardiologica-dx" element={<DXPage />} />
         <Route path="/cardiologica-ai" element={<AIPage />} />
         <Route path="/cordis-dx" element={<CordisPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </>
   );
