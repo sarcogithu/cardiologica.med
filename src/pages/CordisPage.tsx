@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: 'How much does it cost?',
-    answer: 'Free basic access. Premium tier with advanced conditions and test mode coming soon.'
+    answer: 'Free forever for the full simulator with all rhythms, conduction modifiers, and conditions. Pro is $4.99/month or $29.99/year for full QBank access, analytics, and export tools. Institutional pricing starts at $29/seat/year for programs with 10+ students.'
   },
   {
     question: 'Does it work on iPad?',
@@ -277,6 +277,153 @@ export function CordisPage() {
                   <div className="text-gray-400">Lead Display</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="relative py-32 px-8 bg-[#0a0a0a]">
+        <div className="relative max-w-[1100px] mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-[32px] font-medium tracking-[0.5px] mb-2">Simple pricing</h2>
+            <p className="text-[15px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Same clinical content at every tier. Pay for the tools that help you prove you learned it.
+            </p>
+          </div>
+
+          {/* Three Tiers */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-[72px]">
+            {/* FREE */}
+            <div className="border border-white/10 rounded-2xl p-8 flex flex-col hover:border-white/20 transition-all" style={{ background: 'rgba(255,255,255,0.02)' }}>
+              <div className="text-xs font-semibold uppercase tracking-[2px] mb-3.5" style={{ color: 'rgba(255,255,255,0.45)' }}>Free</div>
+              <div className="text-4xl font-medium mb-1">$0</div>
+              <div className="text-xs mb-5 min-h-[18px]" style={{ color: 'rgba(255,255,255,0.3)' }}>Free forever</div>
+              <div className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                The full ECG simulator. Learn at your own pace with every rhythm and condition.
+              </div>
+              <div className="h-px mb-5" style={{ background: 'rgba(255,255,255,0.06)' }} />
+              <ul className="flex-1 mb-6 space-y-0">
+                <li className="text-xs font-semibold uppercase tracking-[1px] pt-3 pb-1" style={{ color: 'rgba(255,255,255,0.4)' }}>Simulator</li>
+                {['All 35 rhythm identities', 'All 51 conduction modifiers', 'All 48 pathognomonic patterns', 'Full MØRPHLΔB access', 'Learn mode with guided content', 'OpenEvidence clinical cards', 'Paper 12-lead and monitor views'].map(f => (
+                  <li key={f} className="text-[13px] leading-relaxed py-[5px] pl-6 relative" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    <span className="absolute left-0 font-bold text-xs" style={{ color: '#86754F' }}>✓</span>{f}
+                  </li>
+                ))}
+                <li className="text-xs font-semibold uppercase tracking-[1px] pt-3 pb-1" style={{ color: 'rgba(255,255,255,0.4)' }}>Testing</li>
+                <li className="text-[13px] leading-relaxed py-[5px] pl-6 relative" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                  <span className="absolute left-0 font-bold text-xs" style={{ color: '#86754F' }}>✓</span>5 sample QBank questions
+                </li>
+                {['Full QBank (all levels)', 'Study mode with explanations', 'Test history and analytics', 'PDF export with credentials', 'Flagged questions and incorrect queue', 'Anki, Notion, GoodNotes export'].map(f => (
+                  <li key={f} className="text-[13px] leading-relaxed py-[5px] pl-6 relative" style={{ color: 'rgba(255,255,255,0.2)' }}>
+                    <span className="absolute left-0" style={{ color: 'rgba(255,255,255,0.15)' }}>—</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3.5 rounded-[10px] text-[13px] font-semibold uppercase tracking-[0.8px] border border-white/10 hover:opacity-90 hover:-translate-y-px transition-all" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.7)' }}>
+                Get started free
+              </button>
+            </div>
+
+            {/* PRO — AURORA */}
+            <div className="rounded-2xl p-8 flex flex-col relative hover:border-white/20 transition-all" style={{
+              border: '2px solid transparent',
+              backgroundOrigin: 'border-box',
+              backgroundClip: 'padding-box, border-box',
+              backgroundImage: 'linear-gradient(#000, #000), linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)',
+              boxShadow: '0 0 24px rgba(169,124,248,0.15), 0 0 48px rgba(74,232,160,0.08)',
+            }}>
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-[1.5px] px-4 py-1 rounded-xl text-black whitespace-nowrap" style={{ background: 'linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)' }}>
+                Most popular
+              </div>
+              <div className="text-xs font-semibold uppercase tracking-[2px] mb-3.5" style={{ color: 'rgba(255,255,255,0.45)' }}>Pro</div>
+              <div className="text-4xl font-medium mb-1">$4.99 <span className="text-sm font-normal" style={{ color: 'rgba(255,255,255,0.4)' }}>/month</span></div>
+              <div className="text-xs mb-5 min-h-[18px]" style={{ color: 'rgba(255,255,255,0.3)' }}>or $29.99/year (save 50%)</div>
+              <div className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                Full testing and tracking. Everything you need to prepare for NREMT, boards, or certification exams.
+              </div>
+              <div className="h-px mb-5" style={{ background: 'linear-gradient(90deg, rgba(169,124,248,0.2), rgba(108,200,208,0.2), rgba(74,232,160,0.2))' }} />
+              <ul className="flex-1 mb-6 space-y-0">
+                <li className="text-xs font-semibold uppercase tracking-[1px] pt-3 pb-1" style={{ color: 'rgba(255,255,255,0.4)' }}>Everything in Free, plus</li>
+                {['Full QBank — all difficulty levels', 'Study mode with full explanations', 'Exam mode (timed, no feedback)', 'Test history and score analytics', 'Incorrect queue (retake missed)', 'Flagged question review', 'PDF export with name, institution, instructor', 'All monitor skins (field, clinical, ICU)', 'Anki (.apkg) export', 'Notion, Notability, GoodNotes export', 'Aurora highlight engine on waveforms', 'Priority access to new content'].map(f => (
+                  <li key={f} className="text-[13px] leading-relaxed py-[5px] pl-6 relative" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    <span className="absolute left-0 font-bold text-xs" style={{ background: 'linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3.5 rounded-[10px] text-[13px] font-bold uppercase tracking-[0.8px] text-black hover:opacity-90 hover:-translate-y-px transition-all" style={{ background: 'linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)' }}>
+                Start pro
+              </button>
+            </div>
+
+            {/* INSTITUTIONAL */}
+            <div className="border border-white/10 rounded-2xl p-8 flex flex-col hover:border-white/20 transition-all" style={{ background: 'rgba(255,255,255,0.02)' }}>
+              <div className="text-xs font-semibold uppercase tracking-[2px] mb-3.5" style={{ color: 'rgba(255,255,255,0.45)' }}>Institutional</div>
+              <div className="text-4xl font-medium mb-1">$29–39 <span className="text-sm font-normal" style={{ color: 'rgba(255,255,255,0.4)' }}>/seat/year</span></div>
+              <div className="text-xs mb-5 min-h-[18px]" style={{ color: 'rgba(255,255,255,0.3)' }}>Volume pricing for 10+ seats</div>
+              <div className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                For paramedic programs, nursing schools, PA programs, residencies, and hospital departments.
+              </div>
+              <div className="h-px mb-5" style={{ background: 'rgba(255,255,255,0.06)' }} />
+              <ul className="flex-1 mb-6 space-y-0">
+                <li className="text-xs font-semibold uppercase tracking-[1px] pt-3 pb-1" style={{ color: 'rgba(255,255,255,0.4)' }}>Everything in Pro, plus</li>
+                {['Instructor dashboard', 'Student progress tracking', 'Assignment creation and scheduling', 'Class-level analytics and reporting', 'Custom question authoring', 'Teaching mode (present to class)', 'PDF reports with institutional branding', 'Microsoft 365 SSO for students', 'Custom case builder', 'Dedicated support', 'LMS / LTI integration (coming soon)', 'CME tracking (coming soon)'].map(f => (
+                  <li key={f} className="text-[13px] leading-relaxed py-[5px] pl-6 relative" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    <span className="absolute left-0 font-bold text-xs" style={{ color: '#86754F' }}>✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-3.5 rounded-[10px] text-[13px] font-semibold uppercase tracking-[0.8px] border hover:opacity-90 hover:-translate-y-px transition-all" style={{ background: 'transparent', color: '#86754F', borderColor: 'rgba(134,117,79,0.4)' }}>
+                Contact us
+              </button>
+            </div>
+          </div>
+
+          {/* Institutional Detail */}
+          <div className="border-t border-white/[0.08] pt-14">
+            <div className="text-center mb-9">
+              <h3 className="text-[26px] font-medium mb-2">Institutional pricing</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                Volume discounts based on seat count. All plans include full Pro access for every student.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-9">
+              {[
+                { name: 'Program', price: '$39', unit: '/seat/year', desc: '10–60 students\nParamedic, nursing, or PA programs' },
+                { name: 'Department', price: '$29', unit: '/seat/year', desc: '61–250 seats\nHospital departments, residency programs' },
+                { name: 'Enterprise', price: 'Custom', unit: '', desc: '251+ seats\nHealth systems, multi-site deployments' },
+              ].map(tier => (
+                <div key={tier.name} className="border border-white/[0.08] rounded-2xl p-7 text-center" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                  <div className="text-[11px] font-semibold uppercase tracking-[2px] mb-2.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{tier.name}</div>
+                  <div className="text-[28px] font-medium">{tier.price} {tier.unit && <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.35)' }}>{tier.unit}</span>}</div>
+                  <div className="text-xs mt-3.5 leading-relaxed whitespace-pre-line" style={{ color: 'rgba(255,255,255,0.35)' }}>{tier.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-[700px] mx-auto mb-7">
+              <h4 className="text-[13px] font-medium uppercase tracking-[1.5px] text-center mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                Included with every institutional plan
+              </h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5">
+                {['Instructor dashboard', 'Microsoft 365 SSO', 'Student progress tracking', 'Assignment creation tools', 'Class analytics and reporting', 'Custom question authoring', 'PDF reports with school branding', 'Priority support'].map(f => (
+                  <li key={f} className="text-[12.5px] leading-relaxed py-1 pl-5 relative" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    <span className="absolute left-0 font-bold text-[11px]" style={{ color: '#86754F' }}>✓</span>{f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="text-center text-xs leading-loose max-w-[600px] mx-auto" style={{ color: 'rgba(255,255,255,0.25)' }}>
+              <span className="inline-block mt-3 text-[11px] tracking-[0.5px]" style={{ color: 'rgba(134,117,79,0.5)' }}>
+                SDVOSB certified — eligible for VA and DoD procurement — GSA schedule pending
+              </span>
+              <br />
+              <a href="mailto:institutions@cardiologica.med" className="inline-block mt-2 text-sm font-medium tracking-[0.3px] hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                institutions@cardiologica.med
+              </a>
             </div>
           </div>
         </div>
