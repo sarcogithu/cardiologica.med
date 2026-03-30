@@ -71,7 +71,7 @@ export function Hero() {
         {/* Drifting gold glow - smaller and smoother */}
         <motion.div
           className="absolute inset-0 w-full h-full"
-          style={{ filter: 'blur(60px)' }}
+          style={{ filter: 'blur(60px)', fontSize: 0, lineHeight: 0, overflow: 'hidden' }}
           animate={{
             background: `radial-gradient(ellipse 40% 40% at ${glowPosition.x}% ${glowPosition.y}%,
               rgba(134, 117, 77, 0.25) 0%,
@@ -114,7 +114,7 @@ export function Hero() {
       </section>
 
       {/* Tagline Reveal Section */}
-      <section className="relative h-screen w-full flex items-center justify-center bg-black">
+      <section className="relative h-[60vh] w-full flex items-center justify-center bg-black">
         <div className="text-center px-8">
           <h1 className="tracking-tight" style={{ fontSize: '3.04rem' }}>
             Deterministic, first-principles electrocardiography.

@@ -28,25 +28,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
-          <div>
-            <h3 className="mb-4 tracking-wide">Resources</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Research Papers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">API Reference</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">PhysioNet Data</a></li>
-            </ul>
-          </div>
-
           {/* Company */}
           <div>
             <h3 className="mb-4 tracking-wide">Company</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Team</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="mailto:devteam@cardiologica.med?subject=Cardiologica%20Inquiry" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:devteam@cardiologica.med?subject=Dataset%20Validation%20Request" className="hover:text-white transition-colors">Send us a Dataset</a></li>
+              <li><a href="mailto:institutions@cardiologica.med?subject=Institutional%20Inquiry" className="hover:text-white transition-colors">Institutional Sales</a></li>
             </ul>
           </div>
         </div>

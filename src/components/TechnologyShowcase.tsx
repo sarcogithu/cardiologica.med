@@ -14,7 +14,7 @@ export function TechnologyShowcase() {
             </p>
             <div className="grid grid-cols-2 gap-8 mt-8">
               <div>
-                <div className="text-4xl mb-2">87.9%</div>
+                <div className="text-4xl mb-2">87.8%</div>
                 <div className="text-gray-400">Overall Accuracy</div>
               </div>
               <div>
@@ -33,7 +33,7 @@ export function TechnologyShowcase() {
             <div className="mt-8 p-4 border border-emerald-900/30 bg-emerald-950/10 rounded">
               <div className="text-sm text-gray-400 mb-3">Life-Threatening Arrhythmia Detection:</div>
               <div className="flex gap-12 text-lg text-emerald-400">
-                <span>✓ 97.1% VT/VF</span>
+                <span>✓ 100% VT/VF <span style={{ fontSize: '0.625em' }}>(CU, n=35)</span></span>
                 <span>✓ 94.9% STEMI <span style={{ fontSize: '0.625em' }}>(n=665, Sens 98.2%, Spec 93.8%)</span></span>
               </div>
             </div>
@@ -50,7 +50,7 @@ export function TechnologyShowcase() {
                 </div>
                 <div className="flex justify-between border-b border-zinc-800 pb-2">
                   <span className="text-gray-400">VT/VF Identification</span>
-                  <span className="text-emerald-400">97.1%</span>
+                  <span className="text-emerald-400">100%*</span>
                 </div>
                 <div className="flex justify-between border-b border-zinc-800 pb-2">
                   <span className="text-gray-400">AFib Recognition</span>
@@ -58,9 +58,13 @@ export function TechnologyShowcase() {
                 </div>
                 <div className="flex justify-between pb-2">
                   <span className="text-gray-400">Overall Performance</span>
-                  <span className="text-cyan-400">87.9%</span>
+                  <span className="text-cyan-400">87.8%</span>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-4 text-xs text-gray-600">
+              *CU Ventricular Tachyarrhythmia Database (n=35). Cross-validated at 95.5% on MIT-BIH Malignant VE (n=22).
             </div>
 
             {/* Challenge CTA */}

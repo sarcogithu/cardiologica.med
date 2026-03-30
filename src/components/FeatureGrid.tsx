@@ -11,7 +11,7 @@ const features = [
   {
     icon: <Atom size={48} weight="light" color="#86754f" />,
     title: 'First-Principles Analysis',
-    description: 'No neural networks, pure electrophysiologic reasoning derived from clinical cardiology principles.'
+    description: 'Every classification derived from electrophysiologic first principles. Transparent reasoning you can trace and verify.'
   },
   {
     icon: <GearSix size={48} weight="light" color="#86754f" />,
