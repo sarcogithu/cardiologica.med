@@ -290,7 +290,7 @@ export function CordisPage() {
       </section>
 
       {/* Framework (shared) */}
-      <EngineSection onExploreTaxonomy={() => setShowTaxonomy(true)} />
+      <EngineSection onExploreTaxonomy={() => setShowTaxonomy(true)} aurora />
 
       {/* FAQ */}
       <section className="relative py-32 px-8 bg-black">

@@ -3,9 +3,10 @@ import { motion } from 'motion/react';
 
 interface EngineSectionProps {
   onExploreTaxonomy?: () => void;
+  aurora?: boolean;
 }
 
-export function EngineSection({ onExploreTaxonomy }: EngineSectionProps) {
+export function EngineSection({ onExploreTaxonomy, aurora = false }: EngineSectionProps) {
   const [glowPosition, setGlowPosition] = useState({ x: 70, y: 30 });
 
   useEffect(() => {
@@ -34,15 +35,20 @@ export function EngineSection({ onExploreTaxonomy }: EngineSectionProps) {
         }}
       />
 
-      {/* Drifting gold glow - with heavy blur */}
+      {/* Drifting glow - gold or aurora */}
       <motion.div
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ filter: 'blur(80px)' }}
         animate={{
-          background: `radial-gradient(ellipse 50% 50% at ${glowPosition.x}% ${glowPosition.y}%,
-            rgba(134, 117, 77, 0.12) 0%,
-            rgba(134, 117, 77, 0.06) 40%,
-            transparent 70%)`
+          background: aurora
+            ? `radial-gradient(ellipse 50% 50% at ${glowPosition.x}% ${glowPosition.y}%,
+                rgba(106, 200, 208, 0.12) 0%,
+                rgba(169, 124, 248, 0.06) 40%,
+                transparent 70%)`
+            : `radial-gradient(ellipse 50% 50% at ${glowPosition.x}% ${glowPosition.y}%,
+                rgba(134, 117, 77, 0.12) 0%,
+                rgba(134, 117, 77, 0.06) 40%,
+                transparent 70%)`
         }}
         transition={{
           duration: 12.5,
@@ -63,7 +69,7 @@ export function EngineSection({ onExploreTaxonomy }: EngineSectionProps) {
           <div>
             <div className="text-2xl tracking-normal text-white mb-4"><span style={{ fontWeight: 700 }}>RHYTHM</span> <span style={{ fontWeight: 300 }}>TAXONOMY</span></div>
             <div className="p-8 bg-black/50 backdrop-blur border border-zinc-800 rounded-lg">
-              <div className="text-5xl mb-4" style={{ color: '#86754f' }}>35</div>
+              <div className="text-5xl mb-4" style={{ color: aurora ? '#A97CF8' : '#86754f' }}>35</div>
               <h3 className="text-2xl mb-4">Rhythm Identities</h3>
               <p className="text-gray-400">
                 Region → Origin → Class → Identity
@@ -74,7 +80,7 @@ export function EngineSection({ onExploreTaxonomy }: EngineSectionProps) {
           <div>
             <div className="text-2xl tracking-normal text-white mb-4"><span style={{ fontWeight: 700 }}>INTRINSICS</span> <span style={{ fontWeight: 300 }}>ONTOLOGY</span></div>
             <div className="p-8 bg-black/50 backdrop-blur border border-zinc-800 rounded-lg">
-              <div className="text-5xl mb-4" style={{ color: '#86754f' }}>18</div>
+              <div className="text-5xl mb-4" style={{ color: aurora ? '#6CC8D0' : '#86754f' }}>18</div>
               <h3 className="text-2xl mb-4">Feature Branches</h3>
               <p className="text-gray-400">
                 Feature → Property → Phenotype
@@ -85,7 +91,7 @@ export function EngineSection({ onExploreTaxonomy }: EngineSectionProps) {
           <div>
             <div className="text-2xl tracking-normal text-white mb-4"><span style={{ fontWeight: 700 }}>PATHOGNOMONICS</span> <span style={{ fontWeight: 300 }}>ONTOLOGY</span></div>
             <div className="p-8 bg-black/50 backdrop-blur border border-zinc-800 rounded-lg">
-              <div className="text-5xl mb-4" style={{ color: '#86754f' }}>7</div>
+              <div className="text-5xl mb-4" style={{ color: aurora ? '#4AE8A0' : '#86754f' }}>7</div>
               <h3 className="text-2xl mb-4">Diagnostic Domains</h3>
               <p className="text-gray-400">
                 Pattern → Criteria → Combined Phenotypes
