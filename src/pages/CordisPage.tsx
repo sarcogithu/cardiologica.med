@@ -126,7 +126,7 @@ export function CordisPage() {
       </section>
 
       {/* Overview */}
-      <section className="relative pt-16 px-8 bg-black" style={{ paddingBottom: '120px' }}>
+      <section className="relative pt-16 pb-24 px-8 bg-black overflow-visible">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
