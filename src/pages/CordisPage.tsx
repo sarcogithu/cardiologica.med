@@ -67,9 +67,15 @@ const faqs = [
   }
 ];
 
+const STRIPE_LINKS = {
+  proMonthly: 'https://buy.stripe.com/14AeVfccL13pcaP3St0oM01',
+  proAnnual: 'https://buy.stripe.com/cNibJ3foX8vR4In9cN0oM00',
+};
+
 export function CordisPage() {
   const [showTaxonomy, setShowTaxonomy] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('annual');
   const [glowPosition, setGlowPosition] = useState({ x: 30, y: 40 });
 
   useEffect(() => {
@@ -338,8 +344,37 @@ export function CordisPage() {
                 Most popular
               </div>
               <div className="text-xs font-semibold uppercase tracking-[2px] mb-3.5" style={{ color: 'rgba(255,255,255,0.45)' }}>Pro</div>
-              <div className="text-4xl font-medium mb-1">$4.99 <span className="text-sm font-normal" style={{ color: 'rgba(255,255,255,0.4)' }}>/month</span></div>
-              <div className="text-xs mb-5 min-h-[18px]" style={{ color: 'rgba(255,255,255,0.3)' }}>or $29.99/year (save 50%)</div>
+              <div className="text-4xl font-medium mb-1">
+                {billingPeriod === 'monthly' ? '$4.99' : '$29.99'} <span className="text-sm font-normal" style={{ color: 'rgba(255,255,255,0.4)' }}>{billingPeriod === 'monthly' ? '/month' : '/year'}</span>
+              </div>
+              <div className="text-xs mb-3 min-h-[18px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                {billingPeriod === 'monthly' ? '$59.88/year at monthly rate' : 'Save 50% vs monthly'}
+              </div>
+              {/* Billing toggle */}
+              <div className="flex items-center gap-2 mb-5">
+                <button
+                  onClick={() => setBillingPeriod('monthly')}
+                  className="text-xs px-3 py-1 rounded-full transition-all"
+                  style={{
+                    background: billingPeriod === 'monthly' ? 'rgba(255,255,255,0.1)' : 'transparent',
+                    color: billingPeriod === 'monthly' ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)',
+                    border: billingPeriod === 'monthly' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
+                  }}
+                >
+                  Monthly
+                </button>
+                <button
+                  onClick={() => setBillingPeriod('annual')}
+                  className="text-xs px-3 py-1 rounded-full transition-all"
+                  style={{
+                    background: billingPeriod === 'annual' ? 'rgba(255,255,255,0.1)' : 'transparent',
+                    color: billingPeriod === 'annual' ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)',
+                    border: billingPeriod === 'annual' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
+                  }}
+                >
+                  Annual
+                </button>
+              </div>
               <div className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 Full testing and tracking. Everything you need to prepare for NREMT, boards, or certification exams.
               </div>
@@ -352,9 +387,15 @@ export function CordisPage() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full py-3.5 rounded-[10px] text-[13px] font-bold uppercase tracking-[0.8px] text-black hover:opacity-90 hover:-translate-y-px transition-all" style={{ background: 'linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)' }}>
+              <a
+                href={billingPeriod === 'monthly' ? STRIPE_LINKS.proMonthly : STRIPE_LINKS.proAnnual}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-3.5 rounded-[10px] text-[13px] font-bold uppercase tracking-[0.8px] text-black text-center hover:opacity-90 hover:-translate-y-px transition-all"
+                style={{ background: 'linear-gradient(135deg, #A97CF8, #6CC8D0, #4AE8A0)' }}
+              >
                 Start pro
-              </button>
+              </a>
             </div>
 
             {/* INSTITUTIONAL */}
@@ -374,9 +415,13 @@ export function CordisPage() {
                   </li>
                 ))}
               </ul>
-              <button className="w-full py-3.5 rounded-[10px] text-[13px] font-semibold uppercase tracking-[0.8px] border hover:opacity-90 hover:-translate-y-px transition-all" style={{ background: 'transparent', color: '#86754F', borderColor: 'rgba(134,117,79,0.4)' }}>
+              <a
+                href="mailto:institutions@cardiologica.med?subject=CORDIS-DX%20Institutional%20Inquiry"
+                className="block w-full py-3.5 rounded-[10px] text-[13px] font-semibold uppercase tracking-[0.8px] border text-center hover:opacity-90 hover:-translate-y-px transition-all"
+                style={{ background: 'transparent', color: '#86754F', borderColor: 'rgba(134,117,79,0.4)' }}
+              >
                 Contact us
-              </button>
+              </a>
             </div>
           </div>
 
